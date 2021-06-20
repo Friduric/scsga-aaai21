@@ -1,6 +1,10 @@
 # Simultaneous Coalition Structure Generation and Assignment
 
-This repository contains implementations, test cases, utilities and benchmarks for simultaneous coalition structure generation and assignment (SCSGA) algorithms. It contains all code use to derive the results in *Anytime Heuristic and Monte Carlo Methods for Large-Scale Simultaneous Coalition Structure Generation and Assignment* by Präntare et. al. 2021. The repository is provided by the article authors.
+This repository contains implementations, test cases, utilities and benchmarks for simultaneous coalition structure generation and assignment (SCSGA) algorithms. It contains all code use to derive the results in:
+- Präntare, Fredrik, Herman Appelgren, and Fredrik Heintz. *"Anytime Heuristic and Monte Carlo Methods for Large-Scale Simultaneous Coalition Structure Generation and Assignment."* AAAI Conference on Artificial Intelligence, Vancouver, February 2-9, 2021. [(pdf)](https://www.aaai.org/AAAI21Papers/AAAI-5046.PrantareF.pdf) 
+- Präntare, Fredrik, and Fredrik Heintz. *"An anytime algorithm for optimal simultaneous coalition structure generation and assignment."* Autonomous Agents and Multi-Agent Systems 34.1 (2020): 1-31. [(pdf)](https://link.springer.com/content/pdf/10.1007/s10458-020-09450-1.pdf) 
+
+The repository is provided by the articles' authors.
 
 A short overview of the code in this repository:
 
