@@ -1,0 +1,56 @@
+{
+    "name" : "large_snpd",
+    "distribution" : "SNPD",
+    "iterations" : 50,
+    "start_seed" : 123,
+    "n_threads" : 16,
+    "present" : {
+        "create_latex_file" : true,
+        "compare_to_optimum" : false,
+        "x_axis" : "time_taken",
+        "y_axis" : "value"
+    },
+
+    "algorithms" : [
+        {
+            "name" : "pure_random_search",
+            "display_name" : "RHC",
+            "use_hillclimb" : true
+        },
+        {
+            "name" : "agent_greedy",
+            "display_name" : "RHY",
+            "shuffle_agents" : true,
+            "use_hillclimb" : true
+        },
+        {
+            "name" : "agent_greedy",
+            "display_name" : "RGA",
+            "shuffle_agents" : true,
+            "use_hillclimb" : false
+        },
+        {
+            "name" : "spmcts",
+            "display_name" : "RMCTS",
+            "exploration_weight" : -0.82,
+            "variance_weight" : 9.13,
+            "use_hillclimb" : false
+        },
+        {
+            "name" : "annealing",
+            "display_name" : "SA"
+        }
+    ],
+    "n_agents" : [
+        1000
+    ],
+    "n_tasks" : [
+        50
+    ],
+    "time_limits" : [
+        1, 7.5, 12.5, 25, 50, 75, 100
+    ],
+    "problem_file_names" : [
+
+    ]
+}

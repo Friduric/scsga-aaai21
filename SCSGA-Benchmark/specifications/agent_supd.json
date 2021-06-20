@@ -1,0 +1,59 @@
+{
+    "name" : "agent_supd",
+    "distribution" : "SUPD",
+    "iterations" : 50,
+    "start_seed" : 123,
+    "n_threads" : 16,
+    "present" : {
+        "create_latex_file" : true,
+        "compare_to_optimum" : true,
+        "x_axis" : "n_agents",
+        "y_axis" : "value"
+    },
+    "algorithms" : [
+        {
+            "name" : "pure_random_search",
+            "display_name" : "RHC",
+            "use_hillclimb" : true
+        },
+        {
+            "name" : "mp",
+            "display_name" : "MP"
+        },
+        {
+            "name" : "agent_greedy",
+            "display_name" : "RHY",
+            "shuffle_agents" : true,
+            "use_hillclimb" : true
+        },
+        {
+            "name" : "agent_greedy",
+            "display_name" : "RGA",
+            "shuffle_agents" : true,
+            "use_hillclimb" : false
+        },
+        {
+            "name" : "spmcts",
+            "display_name" : "RMCTS",
+            "exploration_weight" : 0.05,
+            "variance_weight" : 2.33,
+            "use_hillclimb" : false
+        },
+        {
+            "name" : "annealing",
+            "display_name" : "SA"
+        }
+    ],
+    "n_agents" : [
+        10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+    ],
+    "n_tasks" : [
+        5
+    ],
+    "time_limits" : [
+        8
+    ],
+    "problem_file_names" : [
+
+    ]
+}

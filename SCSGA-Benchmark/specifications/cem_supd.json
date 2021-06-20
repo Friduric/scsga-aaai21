@@ -1,0 +1,30 @@
+{
+    "name" : "cem_supd",
+
+    "n_samples" : 100,
+    "n_elite_samples" : 10,
+    "n_evaluations" : 25,
+    "n_threads" : 25,
+    "learning_rate" : 0.25,
+    "convergence_cutoff" : 0.1,
+    "n_max_iterations" : 1000,
+
+    "problem" : {
+        "distribution" : "SUPD",
+        "start_seed" : -1,
+        "n_agents" : 15,
+        "n_tasks" : 5,
+        "file_names" : []
+    },
+
+    "start_values" : {
+        "exploration_weight" : {
+            "mean" : 50,
+            "stdev" : 50
+        },
+        "variance_weight" : {
+            "mean" : 50,
+            "stdev" : 50
+        }
+    }
+}

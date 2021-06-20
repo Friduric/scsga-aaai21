@@ -1,0 +1,1014 @@
+\documentclass[letterpaper]{article}
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+\usepackage{mathtools}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\definecolor{dgreen}{rgb}{0.157,0.654,0.292}
+\usepackage{pgfplotstable}
+
+\begin{document}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+			\begin{axis}[
+				error bars/y dir      = both,
+				error bars/y explicit = true,
+				error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+				enlargelimits=true,
+				enlarge x limits=false,
+				grid=both,
+				height=0.4\textwidth,
+				width=0.4\textwidth,
+				ymin=4.872, 
+				ymax=4.980,
+				xtick={0,2,4,6,8},
+				xmin=0,
+				xmax=8,
+				legend columns=-1,
+				legend entries={RHC,MP,RHY,RGA,SA,RMCTS,Optimum},
+				legend to name=legend,
+				y tick label style={
+					/pgf/number format/.cd,
+					fixed,
+					fixed zerofill,
+					precision=2,
+					/tikz/.cd
+				},
+				ylabel={Average solution value}
+				]
+				
+				\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+				{ % RHC
+					### time_limit_upd_RHC.txt
+				};
+				
+				\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+				{ % MP
+					### time_limit_upd_MP.txt
+				};
+				
+				\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+				{ % RHY
+					### time_limit_upd_RHY.txt
+				};	
+				
+				\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+				{ % AG
+					### time_limit_upd_RGA.txt
+				};
+				
+				\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+				{ % Annealing
+					### time_limit_upd_SA.txt
+				};
+				
+				\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+				{ % MCTS
+					### time_limit_upd_RMCTS.txt
+				};
+				
+				\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+				{ % Optimal (HY)
+					### time_limit_upd_optimum.txt
+				};
+					
+			\end{axis}
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=1]
+			\begin{axis}
+				[
+				error bars/y dir      = both,
+				error bars/y explicit = true,
+				error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+				enlargelimits=true,
+				enlarge x limits=false,
+				grid=both,
+				height=0.4\textwidth,
+				width=0.4\textwidth,
+				ymin=6.20, 
+				ymax=6.45,
+				xtick={0,2,4,6,8},
+				xmin=0,
+				xmax=8,
+				legend pos= south east,
+				scaled x ticks = false,
+				y tick label style={
+					/pgf/number format/.cd,
+					fixed,
+					fixed zerofill,
+					precision=2,
+					/tikz/.cd
+				}
+				]
+				
+				\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+				{ % RHC
+					### time_limit_npd_RHC.txt
+				};
+				
+				\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+				{ % MP
+					### time_limit_npd_MP.txt
+				};
+				
+				\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+				{ % RHY
+					### time_limit_npd_RHY.txt
+				};	
+				
+				\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+				{ % AG
+					### time_limit_npd_RGA.txt
+				};
+				
+				\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+				{ % Annealing
+					### time_limit_npd_SA.txt
+				};
+				
+				\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+				{ % MCTS
+					### time_limit_npd_RMCTS.txt
+				};
+				
+				\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+				{ % Optimal (HY)
+					### time_limit_npd_optimum.txt
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+		\begin{axis}[
+			error bars/y dir      = both,
+			error bars/y explicit = true,
+			error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+			enlargelimits=true,
+			enlarge x limits=false,
+			grid=both,
+			height=0.4\textwidth,
+			width=0.4\textwidth,
+			ymin=2.5, 
+			ymax=3.75,
+			xtick={0,2,4,6,8},
+			xmin=0,
+			xmax=8,
+			legend pos= south east,
+			xlabel=Execution time (s),
+			y tick label style={
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision=2,
+				/tikz/.cd
+			},
+			ylabel={Average solution value}
+			%mark size=2.0pt,
+			]
+			
+			\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+			{ % RHC
+				### time_limit_supd_RHC.txt
+			};
+			
+			\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+			{ % MP
+				### time_limit_supd_MP.txt
+			};
+			
+			\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+			{ % RHY
+				### time_limit_supd_RHY.txt
+			};	
+			
+			\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+			{ % AG
+				### time_limit_supd_RGA.txt
+			};
+			
+			\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+			{ % Annealing
+				### time_limit_supd_SA.txt
+			};
+			
+			\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+			{ % MCTS
+				### time_limit_supd_RMCTS.txt
+			};
+			
+			\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+			{ % Optimal (HY)
+				### time_limit_supd_optimum.txt
+			};
+			
+		\end{axis}
+	\end{tikzpicture}
+		\begin{tikzpicture}[scale=1]
+		\begin{axis}[
+			error bars/y dir      = both,
+			error bars/y explicit = true,
+			error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+			enlargelimits=true,
+			enlarge x limits=false,
+			grid=both,
+			height=0.4\textwidth,
+			width=0.4\textwidth,
+			ymin=4.1, 
+			ymax=5.4,
+			%ymode=log,
+			xtick={0,2,4,6,8},
+			xmin=0,
+			xmax=8,
+			legend pos= south east,
+			y tick label style={
+				/pgf/number format/.cd,
+				fixed,
+				fixed zerofill,
+				precision=2,
+				/tikz/.cd
+			},
+			xlabel=Execution time (s),
+			]
+			
+			\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+			{ % RHC
+				### time_limit_snpd_RHC.txt
+			};
+			
+			\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+			{ % MP
+				### time_limit_snpd_MP.txt
+			};
+			
+			\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+			{ % RHY
+				### time_limit_snpd_RHY.txt
+			};	
+			
+			\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+			{ % AG
+				### time_limit_snpd_RGA.txt
+			};
+			
+			\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+			{ % Annealing
+				### time_limit_snpd_SA.txt
+			};
+			
+			\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+			{ % MCTS
+				### time_limit_snpd_RMCTS.txt
+			};
+			
+			\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+			{ % Optimal (HY)
+				### time_limit_snpd_optimum.txt
+			};
+		
+		\end{axis}
+	\end{tikzpicture}
+		\ref{legend}
+		\caption{\small{The average solution values obtained for {\textbf{UPD}} (top-left), {\textbf{NPD}} (top-right), {\textbf{SUPD}} (bottom-left) and {\textbf{SNPD}} (bottom-right) problem sets with 15 agents and 5 alternatives.\label{small-scale}}}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+		\begin{axis}[
+		error bars/y dir      = both,
+		error bars/y explicit = true,
+		error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+		enlargelimits=true,
+		enlarge x limits=false,
+		grid=both,
+		height=0.4\textwidth,
+		width=0.36\textwidth,
+		ymin=4.870, 
+		ymax=4.995,
+		xtick={10,15,20},
+		xmin=10,
+		xmax=20,
+		y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=2,
+		/tikz/.cd
+		},
+		ylabel={Average solution value}
+		]      
+		
+		\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+		{ % RHC
+			### agent_upd_RHC.txt
+		};
+		
+		\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+		{ % MP
+			### agent_upd_MP.txt
+		};
+		
+		\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+		{ % RHY
+			### agent_upd_RHY.txt
+		};	
+		
+		\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+		{ % AG
+			### agent_upd_RGA.txt
+		};
+		
+		\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+		{ % Annealing
+			### agent_upd_SA.txt
+		};
+		
+		
+		\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+		{ % MCTS
+			### agent_upd_RMCTS.txt
+		};
+		
+		\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+		{ % optimal
+			### agent_upd_optimum.txt
+		};
+		
+		\end{axis}
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=1]
+	\begin{axis}
+	[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.36\textwidth,
+	ymin=6.10, 
+	ymax=6.65,
+	xtick={10,15,20},
+	xmin=10,
+	xmax=20,
+	legend style={at={(0.5,0.03)},anchor=south},
+	scaled x ticks = false,
+	y tick label style={
+	/pgf/number format/.cd,
+	fixed,
+	fixed zerofill,
+	precision=2,
+	/tikz/.cd
+	}
+	]      
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### agent_npd_RHC.txt
+	};
+	
+	\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+	{ % MP
+		### agent_npd_MP.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### agent_npd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### agent_npd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### agent_npd_SA.txt
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### agent_npd_RMCTS.txt
+	};
+	
+	\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+	{ % optimal
+		### agent_npd_optimum.txt
+	};	
+	
+	\end{axis}
+	\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+		\begin{axis}[
+		error bars/y dir      = both,
+		error bars/y explicit = true,
+		error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+		enlargelimits=true,
+		enlarge x limits=false,
+		grid=both,
+		height=0.4\textwidth,
+		width=0.36\textwidth,
+		ymin=2.40, 
+		ymax=4.45,
+		xtick={10,15,20},
+		xmin=10,
+		xmax=20,
+		legend style={at={(0.5,0.03)},anchor=south},
+		xlabel=N\textsuperscript{\underline{\tiny o}}\thinspace \thinspace of agents,
+		y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=2,
+		/tikz/.cd
+		},
+		ylabel={Average solution value}
+		]         
+		
+		\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+		{ % RHC
+			### agent_supd_RHC.txt
+		};
+		
+		\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+		{ % MP
+			### agent_supd_MP.txt
+		};
+		
+		\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+		{ % RHY
+			### agent_supd_RHY.txt
+		};	
+		
+		\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+		{ % AG
+			### agent_supd_RGA.txt
+		};
+		
+		\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+		{ % Annealing
+			### agent_supd_SA.txt
+		};
+		
+		\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+		{ % MCTS
+			### agent_supd_RMCTS.txt
+		};
+		
+		\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+		{ % optimal
+			### agent_supd_optimum.txt
+		};
+	
+		\end{axis}
+		\end{tikzpicture}
+		\begin{tikzpicture}[scale=1]
+		\begin{axis}[
+		error bars/y dir      = both,
+		error bars/y explicit = true,
+		error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+		enlargelimits=true,
+		enlarge x limits=false,
+		grid=both,
+		height=0.4\textwidth,
+		width=0.36\textwidth,
+		ymin=3.9, 
+		ymax=5.8,
+		xtick={10,15,20},
+		xmin=10,
+		xmax=20,
+		legend style={at={(0.5,0.03)},anchor=south},
+		y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=2,
+		/tikz/.cd
+		},
+		xlabel=N\textsuperscript{\underline{\tiny o}}\thinspace \thinspace of agents,
+		]            
+		
+		\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+		{ % RHC
+			### agent_snpd_RHC.txt
+		};
+		
+		\addplot[mark= ,orange, dotted,line width = 1.3pt] coordinates  
+		{ % MP
+			### agent_snpd_MP.txt
+		};
+		
+		\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+		{ % RHY
+			### agent_snpd_RHY.txt
+		};	
+		
+		\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+		{ % AG
+			### agent_snpd_RGA.txt
+		};
+		
+		\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+		{ % Annealing
+			### agent_snpd_SA.txt
+		};
+		
+		\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+		{ % MCTS
+			### agent_snpd_RMCTS.txt
+		};
+		
+		\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+		{ % optimal
+			### agent_snpd_optimum.txt
+		};
+
+		\end{axis}
+		\end{tikzpicture}
+		\ref{legend}
+		\caption{\small{The average solution values obtained after 8 seconds for {\textbf{UPD}} (top-left), {\textbf{NPD}} (top-right), {\textbf{SUPD}} (bottom-left) and {\textbf{SNPD}} (bottom-right) problem sets with 5 alternatives.\label{small-scale-agent}}}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	scaled y ticks = true,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	ymin=16, 
+	ymax=20.5,
+	xtick={50,200,400,600,800,1000},
+	legend columns=-1,
+	legend entries={RHC,RHY,RGA,SA,RMCTS,Expected Optimum},
+	legend to name=legendlarge,
+	y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=1,
+		/tikz/.cd
+	},
+	ylabel={Average solution value}
+	]
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### many_upd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### many_upd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### many_upd_RGA.txt
+	};
+
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### many_upd_SA.txt
+	
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### many_upd_RMCTS.txt
+	};
+	
+	\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+	{ % optimal
+		(50,19.99) % approx
+		(100,19.99999) % approx
+		(200,19.9999999) % need more precision
+		(300,19.9999999) % need more precision
+		(500,19.9999999) % need more precision
+		(750,19.9999999) % need more precision
+		(1000,19.9999999) % need more precision
+	};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}
+	[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	scaled y ticks = true,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	ymin=22.5, 
+	ymax=30.3,
+	xtick={50,200,400,600,800,1000},
+	y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=1,
+		/tikz/.cd
+	},
+	legend pos= south east,
+	scaled x ticks = false
+	]
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### many_npd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### many_npd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### many_npd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### many_npd_SA.txt
+		
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### many_npd_RMCTS.txt
+	};
+
+\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+{ % optimal
+	%(25,25.38)
+	(50,27.65) % approx
+	(100,30.86) % approx
+	(200,35.38) % approx
+
+};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	ymin=4.5, 
+	ymax=18.5,
+	xtick={50,200,400,600,800,1000},
+	y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=1,
+		/tikz/.cd
+	},
+	xlabel=N\textsuperscript{\underline{\tiny o}}\thinspace \thinspace of agents,
+	legend pos= south east,
+	legend columns=2, 
+	ylabel={Average solution value}
+	] 
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### many_supd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### many_supd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### many_supd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### many_supd_SA.txt
+		
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### many_supd_RMCTS.txt
+	};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}
+	[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=1,
+		/tikz/.cd
+	},
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	ymin=7.0, 
+	xlabel=N\textsuperscript{\underline{\tiny o}}\thinspace \thinspace of agents,
+	xtick={50,200,400,600,800,1000},
+	legend pos= south east,
+	scaled x ticks = false
+	]   
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### many_snpd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### many_snpd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### many_snpd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### many_snpd_SA.txt
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### many_snpd_RMCTS.txt
+	};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\ref{legendlarge}
+	\caption{\small{The solution values obtained by the algorithms after 100 seconds for {\textbf{UPD}} (top-left), {\textbf{NPD}} (top-right), {\textbf{SUPD}} (bottom-left) and {\textbf{SNPD}} (bottom-right) problem sets with 20 alternatives. \label{large-scale-agent}}}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	scaled y ticks = true,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	xtick={0,25,50,75,100},
+	xmin=0,
+	xmax=100,
+	ymax=51.5,
+	y tick label style={
+	/pgf/number format/.cd,
+	fixed,
+	fixed zerofill,
+	precision=1,
+	/tikz/.cd
+	},
+	ylabel={Average solution value}
+	]
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### large_upd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### large_upd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### large_upd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### large_upd_SA.txt
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### large_upd_RMCTS.txt
+	};
+	
+	\addplot[mark= ,black, loosely dotted,line width = 1.5pt] coordinates  
+	{ % optimal
+		(0,49.999999)
+		(100,49.999999)
+	};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}
+	[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	scaled y ticks = true,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	%ymin=64.2, 
+	%ymax=66.5,
+	xtick={0,25,50,75,100},
+	xmin=0,
+	y tick label style={
+	/pgf/number format/.cd,
+	fixed,
+	fixed zerofill,
+	precision=1,
+	/tikz/.cd
+	},
+	xmax=100,
+	legend pos= south east,
+	scaled x ticks = false
+	]
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### large_npd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### large_npd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### large_npd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### large_npd_SA.txt
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### large_npd_RMCTS.txt
+	};
+	
+	\node[anchor=west] at (axis cs:2,66.5){\textbf{exp opt $\approx 112.5$}};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+	\begin{axis}[
+	error bars/y dir      = both,
+	error bars/y explicit = true,
+	error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+	enlargelimits=true,
+	enlarge x limits=false,
+	grid=both,
+	height=0.4\textwidth,
+	width=0.4\textwidth,
+	xtick={0,25,50,75,100},
+	y tick label style={
+	/pgf/number format/.cd,
+	fixed,
+	fixed zerofill,
+	precision=1,
+	/tikz/.cd
+	},
+	xmin=0,
+	xlabel=Execution time (s),
+	xmax=100,
+	legend pos= south east,
+	legend columns=2, 
+	ylabel={Average solution value}
+	]    
+	
+	\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+	{ % RHC
+		### large_supd_RHC.txt
+	};
+	
+	\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+	{ % RHY
+		### large_supd_RHY.txt
+	};	
+	
+	\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+	{ % AG
+		### large_supd_RGA.txt
+	};
+	
+	\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+	{ % Annealing
+		### large_supd_SA.txt
+	};
+	
+	\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+	{ % MCTS
+		### large_supd_RMCTS.txt
+	};
+	
+	\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=1]
+		\begin{axis}
+		[
+		error bars/y dir      = both,
+		error bars/y explicit = true,
+		error bars/error bar style={solid,mark size=2.2pt,line width=0.9pt},
+		enlargelimits=true,
+		enlarge x limits=false,
+		y tick label style={
+		/pgf/number format/.cd,
+		fixed,
+		fixed zerofill,
+		precision=1,
+		/tikz/.cd
+		},
+		grid=both,
+		height=0.4\textwidth,
+		width=0.4\textwidth,
+		xlabel=Execution time (s),
+		xtick={0,25,50,75,100},
+		xmin=0,
+		xmax=100,
+		legend pos= south east,
+		scaled x ticks = false
+		]      
+		
+		\addplot[mark= ,blue, solid,line width = 1.3pt] coordinates  
+		{ % RHC
+			### large_snpd_RHC.txt
+		};
+		
+		\addplot[mark= ,dgreen, densely dotted,line width = 1.3pt] coordinates  
+		{ % RHY
+			### large_snpd_RHY.txt
+		};	
+		
+		\addplot[mark= ,red, dashed,line width = 1.3pt] coordinates  
+		{ % AG
+			### large_snpd_RGA.txt
+		};
+		
+		\addplot[mark= ,brown, dash pattern=on 4pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt,line width = 1.3pt] coordinates  
+		{ % Annealing
+			### large_snpd_SA.txt
+		};
+		
+		\addplot[mark= ,violet, dashdotted,line width = 1.3pt] coordinates  
+		{ % MCTS
+			### large_snpd_RMCTS.txt
+		};
+		
+		\end{axis}
+	\end{tikzpicture}
+	\ref{legendlarge}
+	\caption{\small{The solution values obtained for {\textbf{UPD}} (top-left), {\textbf{NPD}} (top-right), {\textbf{SUPD}} (bottom-left) and {\textbf{SNPD}} (bottom-right) problem sets with 1000 agents and 50 alternatives. \label{large-scale}}}
+\end{center}
+\end{figure}
+
+\end{document}
