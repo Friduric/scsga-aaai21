@@ -1,6 +1,6 @@
 # Simultaneous Coalition Structure Generation and Assignment
 
-This repository contains implementations, test cases, utilities and benchmarks for simultaneous coalition structure generation and assignment (SCSGA) algorithms. It contains all code use to derive the results in:
+This repository contains implementations, test cases, utilities and benchmarks for simultaneous coalition structure generation and assignment (SCSGA) algorithms. It contains all code used to derive the results in:
 - Präntare, Fredrik, Herman Appelgren, and Fredrik Heintz. *"Anytime Heuristic and Monte Carlo Methods for Large-Scale Simultaneous Coalition Structure Generation and Assignment."* AAAI Conference on Artificial Intelligence, 2021. [(pdf)](https://www.aaai.org/AAAI21Papers/AAAI-5046.PrantareF.pdf) 
 - Präntare, Fredrik, and Fredrik Heintz. *"An Anytime Algorithm for Optimal Simultaneous Coalition Structure Generation and Assignment."* Autonomous Agents and Multi-Agent Systems 34.1 (2020): 1-31. [(pdf)](https://link.springer.com/content/pdf/10.1007/s10458-020-09450-1.pdf) 
 - Präntare, Fredrik, and Fredrik Heintz. *"Hybrid Dynamic Programming for Simultaneous Coalition Structure Generation and Assignment."* International Conference on Principles and Practice of Multi-Agent Systems, 2020. [(pdf)](https://www.ida.liu.se/divisions/aiics/publications/PRIMA-2021-Hybrid-Dynamic-Programming.pdf) 
@@ -9,7 +9,7 @@ The repository is provided by the articles' authors.
 
 A short overview of the code in this repository:
 
-- **SCSGA**: The main algorithm library
+- **SCSGA**: The main algorithm library.
   - Files with prefix **coalitional_values_generator** contains code for generating problem distributions.
   - Files with prefix **solver** implements different algorithms to solve SCSGA problems.
 - **SCSGA-Benchmark**: A custom-built benchmark suite for SCSGA algorithms.
@@ -55,7 +55,7 @@ cd SCSGA-Benchmark
 benchmark.py
 ```
 
-This executes the benchmark pipeline for all benchmarks shown in the article (defined using JSON files in the specifications directory). Note that this will take many CPU-days to complete. Use the --n_threads argument to run the benchmarks in parallel. The benchmark time limit is implemented using wall clock time, so don't use more threads than the number of physical cores on your machine. Also, keep in mind that the peak memory usage is approx. 2.5 MB per thread used. The --log_to_console flag might also be of interest to display subresults.
+This executes the benchmark pipeline for all benchmarks shown in the AAAI21 article (defined using JSON files in the specifications directory). Note that this will take many CPU-days to complete. Use the --n_threads argument to run the benchmarks in parallel. The benchmark time limit is implemented using wall clock time, so don't use more threads than the number of physical cores on your machine. Also, keep in mind that the peak memory usage is approx. 2.5 MB per thread used. The --log_to_console flag might also be of interest to display subresults.
 
 Once the benchmark suite has completed, the results are presented in three forms in the results directory. The raw results are saved to json files, including the settings for each benchmark type. Second, graphs are produced comparing the performance of each algorithm on the different benchmarks. Finally, all results are collected to a LaTeX file (results/graph.tex). This file required the pgfplots library to compile.
 
