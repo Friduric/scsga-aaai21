@@ -15,12 +15,8 @@ if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9)
 endif()
 
 # Add pybind11
-if( EXISTS "${CMAKE_SOURCE_DIR}/LIB/pybind11/.git" )
-        set(PYBIND11_CPP_STANDARD -std=c++1z) 
-        add_subdirectory("LIB/pybind11")
-        add_subdirectory("PYTHON-API")
-else()
-        message( WARNING "The git submodule for pybind11 is not initialized properly. Building without Python API. Please run git submodule update --init --recursive if you want Python API." )
-endif()
+set(PYBIND11_CPP_STANDARD -std=c++1z) 
+add_subdirectory("LIB/pybind11")
+add_subdirectory("PYTHON-API")
 
 add_subdirectory(SCSGA-Benchmark)

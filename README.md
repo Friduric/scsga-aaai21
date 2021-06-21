@@ -28,7 +28,6 @@ sudo apt install cmake git gcc g++ python3 python3-venv
 Clone the repository and initialize the pybind11 submodule.
 ```
 git clone https://github.com/Friduric/scsga-aaai21.git
-git submodule update --init --recursive
 ```
 
 Setup the build system and compile the C++ code.
